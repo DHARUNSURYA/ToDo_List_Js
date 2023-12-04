@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo | LiSt</title>
+    <style>
+        body{
+            background-color: pink;
+        }
+        div{
+            width: 500px;
+            height: 200px;
+            background-color: antiquewhite; 
+            margin-top: 10%;
+            margin-left: 30%;
+            text-align: center;      
+            padding: 20px;
+            display: relative;
+         }
+       ul{
+        list-style: none;
+       }
+       ul li:hover {
+        background-color: #e0e0e0;
+    }  
+    ul li {
+        margin-bottom: 10px;
+        padding: 8px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #3498db;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>ToDo LiSt</h1>
+        <input id="input"> <button onclick="added()">Add Work</button>
+        <ul id="ai">
+            <li>
+                h1 <button onclick="dele(event)">Delete</button>
+            </li>  
+        </ul>
+    </div>
+    <script>
+        var input=document.getElementById('input')
+        var neww=document.getElementById('ai')
+        function added(){
+            var listitem=document.createElement("li")
+            listitem.innerHTML=input.value + "<button onclick='dele(event)'>Delete</button>"
+            neww.append(listitem)
+        }
+        function dele(event){
+            event.target.parentElement.remove()
+        }
+    </script>
+</body>
+</html>
